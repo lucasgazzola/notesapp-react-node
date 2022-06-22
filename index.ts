@@ -349,11 +349,11 @@ app.get('/api/categories/:name/notes', async(req: express.Request, res: express.
 
 
 
-app.use(express.static(path.join(__dirname, '/views')));
+app.use(express.static(path.join(__dirname, '/frontend/build')));
 
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/views', 'index.html'));
+  res.sendFile(path.join(__dirname, '/frontend/build', 'index.html'));
 });
 
 
