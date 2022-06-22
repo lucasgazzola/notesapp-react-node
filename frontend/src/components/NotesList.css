@@ -1,0 +1,51 @@
+.NotesList {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.NotesList--container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.NotesList--title {
+  height: 100%;
+  width: 48%;
+  text-align: end;
+}
+
+.NotesList--title__container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+.NotesList--loading {
+  color: rgb(194, 194, 194);
+  text-align: center;
+  line-height: 42px;
+  letter-spacing: 3px;
+  font-weight: 900
+}
+
+@media screen and (max-width: 768px) {
+  .NotesList--title__container {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .NotesList--title {
+    width: 100%;
+    text-align: center;
+  }
+}

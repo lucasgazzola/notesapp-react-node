@@ -1,0 +1,43 @@
+.Header--container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  gap: 46px;
+}
+
+
+.Header--container a {
+  color: #f3f3f3;
+}
+
+.Header--title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+
+.Header--container a:active {
+  color: #f3f3f3;
+}
+
+.Link--container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.Link--container span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Header--button {
+  min-height: 32px;
+  height: auto;
+}
