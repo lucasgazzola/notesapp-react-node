@@ -1,7 +1,6 @@
 .Note--container {
   z-index: 1;
   min-width: 350px;
-  cursor: pointer;
   max-width: 450px;
   display: flex;
   border-radius: 10px;
