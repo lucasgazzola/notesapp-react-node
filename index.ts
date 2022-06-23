@@ -19,19 +19,25 @@ app.use(express.json());
 // GET ALL NOTES
 // WORKING!
 async function getAllNotes() {
-  const notes = await prisma.note.findMany({
-    include : {
-      categories: {
-        select: {
-          categoryName: true
+  try{
+    const notes = await prisma.note.findMany({
+      include : {
+        categories: {
+          select: {
+            categoryName: true
+          }
         }
       }
-    }
-  });
-  console.log('GETTINGALLNOTES');
-  console.log(notes);
-  return notes;
+    });
+    console.log('GETTINGALLNOTES');
+    console.log(notes);
+    return notes;
+  } catch(e){
+    console.log(e);
+    return [];
+  }
 }
+
 app.get(NOTES_URL, async (req: express.Request, res: express.Response) => {
   const notes = await getAllNotes();
   res.status(200).json(notes);
