@@ -1,4 +1,4 @@
-const API_URL = process.env.API_URL || 'https://notes-lucasgazzola.herokuapp.com/api';
+const API_URL = process.env.API_URL || 'http://localhost:3000/api';
 const NOTES_URL = `${API_URL}/notes`;
 const ARCHIVED_NOTES_URL = `${API_URL}/archived`;
 
