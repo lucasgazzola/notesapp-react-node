@@ -32,10 +32,20 @@
 
 .NotesList--loading {
   color: rgb(194, 194, 194);
+  font-size: 24px;
   text-align: center;
-  line-height: 42px;
   letter-spacing: 3px;
   font-weight: 900
+}
+
+.NotesList--loading--button {
+  font-size: inherit;
+  color: #ff0000;
+  cursor: default;
+}
+
+.NotesList--loading--button:hover {
+  color: #ff8800;
 }
 
 @media screen and (max-width: 768px) {

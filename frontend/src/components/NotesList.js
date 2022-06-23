@@ -15,6 +15,17 @@ export default function NotesList() {
   const { reFetch } = useContext(AppContext);
 
   const { notes, setNotes } = useContext(NotesContext);
+  const { setIsVisible, setNoteInModal, setIsEditing } = useContext(AppContext)
+
+  const handleClick = () => {
+    setIsEditing(false);
+    setNoteInModal({
+      title: '',
+      content: '',
+      categories: [],
+    });
+    setIsVisible(prevState => !prevState);
+  }
 
 
   useEffect(() => {
@@ -47,19 +58,14 @@ export default function NotesList() {
               return <Note key={note.id} note={note} />
             })
             : <h3 className='NotesList--loading'>There aren't any notes in this category. <br /> You can create one by clicking the <span
-              style={{
-                color: '#3312d4',
-                borderRadius: "10px",
-                padding: "5px 6px",
-                letterSpacing: "1px",
-                backgroundColor: '#f4f4f4',
-                fontWeight: '900'
-              }}
+              className='NotesList--loading--button'
+              onClick={handleClick}
             >
-              Create Note</span> button
+              Create Note </span>
+              button.
             </h3>
         }
       </main>
-    </div>
+    </div >
   )
 }
