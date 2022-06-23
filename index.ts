@@ -302,12 +302,17 @@ app.get('/api/archived', async (req: express.Request, res: express.Response)=>{
 
 
 async function getAllCategories(){
-  const categories = await prisma.category.findMany({
-    select: {
-      name: true
-    }
-  });
-  return categories;
+  try{
+    const categories = await prisma.category.findMany({
+      select: {
+        name: true
+      }
+    });
+    return categories;
+  } catch(e){
+    console.error(e);
+    return [];
+  }
 }
 
 app.get('/api/categories', async(req: express.Request, res: express.Response) => {
