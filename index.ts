@@ -109,7 +109,7 @@ async function setNewNote({title, content, categories}
       title,
       content,
       isArchived: false,
-      updatedAt: new Date().toLocaleString()
+      updatedAt: new Date().toISOString()
     }
   });
 
