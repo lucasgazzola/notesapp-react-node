@@ -1,0 +1,56 @@
+.Category--container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 14px;
+  background: -webkit-linear-gradient(to right, #070055, #464653);
+  background: linear-gradient(to right, #070055, #464653);
+  border-radius: 10px;
+  box-shadow: #399fa7 1px 1px 4px 1px;
+}
+
+.Category--container>* {
+  height: 100%;
+}
+
+.Icon--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+  padding: 2px;
+}
+
+.Name--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font: 1em sans-serif;
+  font-weight: 700;
+  letter-spacing: .8px;
+  color: rgb(224, 254, 255);
+  line-height: normal !important
+}
+
+.DeleteButton--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  height: 100%;
+  text-align: center;
+  background-color: #399fa7;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 5px;
+  color: #110d2e;
+}
+
+.DeleteButton--container:hover {
+  background-color: #85f7ff;
+  color: #1d1752;
+}

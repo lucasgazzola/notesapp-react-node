@@ -1,0 +1,28 @@
+.CategorySelector--container {
+  width: 48%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.CategorySelector {
+  color: #202020;
+  outline: none;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+.CategorySelector:hover,
+.CategorySelector:focus {
+  color: #ffffff;
+  background-color: #04002c;
+}
+
+@media screen and (max-width: 768px) {
+  .CategorySelector--container {
+    width: 100%;
+    align-items: center;
+  }
+}

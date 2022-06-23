@@ -1,0 +1,26 @@
+.NoteControls--container {
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+  height: 100%;
+}
+
+
+
+.NoteControls--item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  height: 100%;
+  text-align: center;
+  background-color: #399fa7;
+  padding: 4px;
+  border-radius: 5px;
+  color: #0e0c2c;
+}
+
+.NoteControls--item:hover {
+  background-color: #85f7ff;
+  color: #1d1752;
+}
