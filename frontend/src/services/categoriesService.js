@@ -1,4 +1,4 @@
-const API_URL = process.env.API_URL || 'http://localhost:3000/api';
+const API_URL = process.env.API_URL || 'https://lucas-notes-app.herokuapp.com/api';
 
 export async function getAllCategoriesOnNote(id) {
   return await fetch(`${API_URL}/notes/${id}/categories`, {
