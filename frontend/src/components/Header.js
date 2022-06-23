@@ -30,6 +30,13 @@ export default function Header() {
           ? (
             <>
               <h1 className="Header--title">Archived</h1>
+              <button
+                className='Header--button'
+                type='button'
+                onClick={handleClick}
+              >
+                Create Note
+              </button>
               <div className='Link--container'>
                 <span>
                   <AiFillLeftCircle />
