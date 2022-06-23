@@ -44,7 +44,6 @@ export default function NotesList() {
         {
           notes?.length !== 0
             ? notes?.map(note => {
-              console.log(note)
               return <Note key={note.id} note={note} />
             })
             : <h3 className='NotesList--loading'>There aren't any notes in this category. <br /> You can create one by clicking the <span

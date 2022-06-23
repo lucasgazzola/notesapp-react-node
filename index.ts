@@ -32,11 +32,10 @@ async function getAllNotes() {
         }
       }
     });
-    console.log('GETTINGALLNOTES');
     console.log(notes);
     return notes;
   } catch(e){
-    console.log(e);
+    console.error(e);
     return [];
   }
 }
@@ -373,6 +372,6 @@ app.get('*', (req, res) => {
 
 
 // PORT LISTENING
-app.listen(process.env.PORT || PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${PORT} `);
 });
