@@ -16,6 +16,9 @@ app.use(cors());
 app.use(express.json());
 
 
+// TODO: Add all the try catch blocks
+
+
 // GET ALL NOTES
 // WORKING!
 async function getAllNotes() {
@@ -106,7 +109,7 @@ async function setNewNote({title, content, categories}
       title,
       content,
       isArchived: false,
-      updatedAt: new Date().toISOString()
+      updatedAt: new Date().toLocaleString()
     }
   });
 

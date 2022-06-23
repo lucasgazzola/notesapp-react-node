@@ -10,18 +10,6 @@ export default function Note({ note }) {
   const { setIsVisible, setNoteInModal, setIsEditing } = useContext(AppContext)
   const { title, updatedAt, id } = note;
 
-  const DATE = updatedAt?.slice(0, 10)
-  const HOURS = updatedAt?.slice(11, 19)
-
-  const [HOUR, MINUTES, SECONDS] = HOURS.split(':')
-  const TIME_FORMAT = `${HOUR}:${MINUTES}:${SECONDS}`
-
-  const [YEAR, MONTH, DAY] = DATE.split('-')
-  const DATE_FORMAT = `${DAY}/${MONTH}/${YEAR}`
-
-
-
-
   const handleClick = async () => {
     setIsEditing(true);
     setIsVisible(true);
@@ -39,7 +27,7 @@ export default function Note({ note }) {
     >
       <div className='Note--content'>
         <h3>{title}</h3>
-        <span className='Note--date'><p>Last edited:</p> {`${TIME_FORMAT} - ${DATE_FORMAT}`}</span>
+        <span className='Note--date'><p>Last edited:</p> {`${updatedAt}`}</span>
       </div>
       <NoteControls note={note} />
     </div>
