@@ -1,6 +1,9 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "engines": {
+    "ts-node": "10.8.1"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,7 +21,7 @@
     "@typescript-eslint/eslint-plugin": "^5.27.0",
     "@typescript-eslint/parser": "^5.27.0",
     "eslint": "^8.17.0",
-    "nodemon": "2.0.16",
+    "nodemon": "^1.3.3",
     "prisma": "^3.15.1",
     "ts-node": "10.8.1",
     "typescript": "4.7.3"
