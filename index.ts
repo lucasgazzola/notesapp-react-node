@@ -316,7 +316,7 @@ async function getAllCategories(){
 }
 
 app.get('/api/categories', async(req: express.Request, res: express.Response) => {
-  const categories = getAllCategories() ;
+  const categories = await getAllCategories() ;
   console.log(categories);
   res.status(200).json(categories);
 });
