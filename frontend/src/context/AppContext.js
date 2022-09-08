@@ -1,16 +1,15 @@
-import { createContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react'
 
-export const AppContext = createContext();
+export const AppContext = createContext()
 
 export function AppContextProvider({ children }) {
+  const [isEditing, setIsEditing] = useState(false)
 
-  const [isEditing, setIsEditing] = useState(false);
+  const [noteInModal, setNoteInModal] = useState({})
 
-  const [noteInModal, setNoteInModal] = useState({});
+  const [isVisible, setIsVisible] = useState(false)
 
-  const [isVisible, setIsVisible] = useState(false);
-
-  const [reFetch, setReFetch] = useState(false);
+  const [reFetch, setReFetch] = useState(false)
 
   const [categoryName, setCategoryName] = useState('')
 
@@ -25,12 +24,13 @@ export function AppContextProvider({ children }) {
     setNoteInModal,
     isEditing,
     setIsEditing,
-  };
-
+  }
 
   return (
-    <AppContext.Provider value={contextValue}>
-      {children}
-    </AppContext.Provider>
-  );
+    <AppContext.Provider value={contextValue}>{children}</AppContext.Provider>
+  )
+}
+
+export function useAppContext() {
+  return useContext(AppContext)
 }
