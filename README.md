@@ -1,10 +1,8 @@
-# Live site: [my-note-app](https://lucas-note-fullstack-app.netlify.app/)
-
-## Deploye in: [Netlify](https://www.netlify.com/)
-
----
-
 # Welcome to My-Note App
+
+### Live site: [my-note-app](https://lucas-note-fullstack-app.netlify.app/)
+
+#### Deploye in: [Netlify](https://www.netlify.com/)
 
 ## Hi, my name is Lucas Gazzola!
 
