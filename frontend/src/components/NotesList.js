@@ -1,11 +1,16 @@
-import './NotesList.css'
-import { useEffect, useContext } from 'react'
+import React, { Suspense, useEffect, useContext } from 'react'
+import { useLocation } from 'react-router-dom'
+
 import { NotesContext } from '../context/NotesContext'
 import { AppContext } from '../context/AppContext'
 import { getAllNotes, getAllArchivedNotes } from '../services/notesService'
-import Note from './Note'
-import CategorySelector from '../components/CategorySelector'
-import { useLocation } from 'react-router-dom'
+
+import './NotesList.css'
+
+const CategorySelector = React.lazy(() =>
+  import('../components/CategorySelector')
+)
+const Note = React.lazy(() => import('../components/Note'))
 
 export default function NotesList() {
   const actualLocation = useLocation()
@@ -50,12 +55,18 @@ export default function NotesList() {
     <div className="NotesList">
       <header className="NotesList--title__container">
         <h2 className="NotesList--title">List of notes</h2>
-        <CategorySelector />
+        <Suspense fallback={<div>Loading categories..</div>}>
+          <CategorySelector />
+        </Suspense>
       </header>
       <main className="NotesList--container">
         {notes?.length !== 0 ? (
           notes?.map(note => {
-            return <Note key={note.id} note={note} />
+            return (
+              <Suspense fallback={<div>Loading note...</div>}>
+                <Note key={note.id} note={note} />
+              </Suspense>
+            )
           })
         ) : (
           <h3 className="NotesList--loading">
