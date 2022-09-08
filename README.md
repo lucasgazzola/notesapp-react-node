@@ -6,15 +6,15 @@
 
 ## Hi, my name is Lucas Gazzola!
 
-### I'm a _Junior Front-End Developer_ and I'm from Argentina!
+### I'm a _Junior FullStack Developer_ and I'm from Argentina!
 
 **This is _My-Note App_: a web to save notes with categories.**
 
-This app was built with no knowledge about _back-end Development_.
+This app was built with any knowledge about _Back-end Development_.
 
-In the Front, I've used **React 18** (create-react-app) and in the back, I've learned to use Node.js with [**Express.js**](https://expressjs.com/) and [**TypeScript**](https://www.typescriptlang.org/).
+In the Front, I've used **React 18** (create-react-app) and in the back, I've learned how to use Node.js with [**Express.js**](https://expressjs.com/) and [**TypeScript**](https://www.typescriptlang.org/).
 
-I find myself looking for a job in the field of Development.
+I find myself looking for a job in the field of Web Development.
 
 ## My skills are:
 
