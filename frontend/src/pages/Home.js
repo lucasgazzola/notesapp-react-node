@@ -1,6 +1,6 @@
-import Header from '../components/Header';
-import NotesList from '../components/NotesList';
-import Modal from '../components/Modal';
+import Header from '../components/Header'
+import NotesList from '../components/NotesList'
+import Modal from '../components/Modal'
 
 export default function Home() {
   return (
@@ -9,5 +9,5 @@ export default function Home() {
       <Modal />
       <NotesList />
     </div>
-  );
+  )
 }
