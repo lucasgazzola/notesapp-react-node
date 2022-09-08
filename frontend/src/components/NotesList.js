@@ -1,43 +1,44 @@
 import './NotesList.css'
-import { useEffect, useContext } from 'react';
-import { NotesContext } from '../context/NotesContext';
-import { AppContext } from '../context/AppContext';
-import { getAllNotes, getAllArchivedNotes } from '../services/notesService';
-import Note from './Note';
-import CategorySelector from '../components/CategorySelector';
-import { useLocation } from 'react-router-dom';
+import { useEffect, useContext } from 'react'
+import { NotesContext } from '../context/NotesContext'
+import { AppContext } from '../context/AppContext'
+import { getAllNotes, getAllArchivedNotes } from '../services/notesService'
+import Note from './Note'
+import CategorySelector from '../components/CategorySelector'
+import { useLocation } from 'react-router-dom'
 
 export default function NotesList() {
-  const actualLocation = useLocation();
-  const isArchived = actualLocation.pathname.includes('archived');
+  const actualLocation = useLocation()
+  const isArchived = actualLocation.pathname.includes('archived')
 
+  const { reFetch } = useContext(AppContext)
 
-  const { reFetch } = useContext(AppContext);
-
-  const { notes, setNotes } = useContext(NotesContext);
+  const { notes, setNotes } = useContext(NotesContext)
   const { setIsVisible, setNoteInModal, setIsEditing } = useContext(AppContext)
 
   const handleClick = () => {
-    setIsEditing(false);
+    setIsEditing(false)
     setNoteInModal({
       title: '',
       content: '',
       categories: [],
-    });
-    setIsVisible(prevState => !prevState);
+    })
+    setIsVisible(prevState => !prevState)
   }
-
 
   useEffect(() => {
     async function fetchNotes(isArchived) {
       if (isArchived) {
         await getAllArchivedNotes()
-          .then((notesList) => setNotes(notesList?.filter(note => note.isArchived === true)))
+          .then(notesList =>
+            setNotes(notesList?.filter(note => note.isArchived === true))
+          )
           .catch(console.error)
-
       } else {
         await getAllNotes()
-          .then((notesList) => setNotes(notesList?.filter(note => note.isArchived === false)))
+          .then(notesList =>
+            setNotes(notesList?.filter(note => note.isArchived === false))
+          )
           .catch(console.error)
       }
     }
@@ -46,26 +47,27 @@ export default function NotesList() {
   }, [isArchived, actualLocation, reFetch])
 
   return (
-    <div className='NotesList'>
-      <header className='NotesList--title__container'>
-        <h2 className='NotesList--title'>List of notes</h2>
+    <div className="NotesList">
+      <header className="NotesList--title__container">
+        <h2 className="NotesList--title">List of notes</h2>
         <CategorySelector />
       </header>
-      <main className='NotesList--container'>
-        {
-          notes?.length !== 0
-            ? notes?.map(note => {
-              return <Note key={note.id} note={note} />
-            })
-            : <h3 className='NotesList--loading'>There aren't any notes in this category. <br /> You can create one by clicking the <span
-              className='NotesList--loading--button'
-              onClick={handleClick}
-            >
-              Create Note </span>
-              button.
-            </h3>
-        }
+      <main className="NotesList--container">
+        {notes?.length !== 0 ? (
+          notes?.map(note => {
+            return <Note key={note.id} note={note} />
+          })
+        ) : (
+          <h3 className="NotesList--loading">
+            There aren't any notes in this category. <br /> You can create one
+            by clicking the{' '}
+            <span className="NotesList--loading--button" onClick={handleClick}>
+              Create Note
+            </span>{' '}
+            button.
+          </h3>
+        )}
       </main>
-    </div >
+    </div>
   )
 }
