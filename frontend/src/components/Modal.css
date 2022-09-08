@@ -4,11 +4,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #454545aa;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 10000000000000;
 }
 
 .hidden {
@@ -32,9 +32,9 @@
 
 .Modal--content {
   --borderWidth: 3px;
-  background: #000000d3;
+  background: #000000;
   position: relative;
-  border-radius: var(--borderWidth);
+  border-radius: 14px;
 }
 
 h2 {
@@ -43,21 +43,6 @@ h2 {
   font-weight: bold;
   text-align: center;
 }
-
-.Modal--content:after {
-  content: '';
-  position: absolute;
-  top: calc(-1 * var(--borderWidth));
-  left: calc(-1 * var(--borderWidth));
-  height: calc(100% + var(--borderWidth) * 2);
-  width: calc(100% + var(--borderWidth) * 2);
-  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-  border-radius: calc(2 * var(--borderWidth));
-  z-index: -1;
-  animation: animatedgradient 3s ease alternate infinite;
-  background-size: 300% 300%;
-}
-
 
 @keyframes animatedgradient {
   0% {
@@ -73,14 +58,13 @@ h2 {
   }
 }
 
-
 .Form--container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   height: 100%;
-  gap: 1rem;
+  gap: 1.4rem;
 }
 
 textarea {

@@ -5,8 +5,6 @@
   height: 100%;
 }
 
-
-
 .NoteControls--item {
   display: flex;
   justify-content: center;
@@ -14,13 +12,24 @@
   border: none;
   height: 100%;
   text-align: center;
-  background-color: #399fa7;
-  padding: 4px;
+  background-color: #000;
+  padding: 8px;
   border-radius: 5px;
-  color: #0e0c2c;
+  color: #fff;
 }
 
 .NoteControls--item:hover {
-  background-color: #85f7ff;
-  color: #1d1752;
+  background-color: #282828;
+}
+
+.delete.NoteControls--item:hover {
+  color: #f00;
+}
+
+.edit.NoteControls--item:hover {
+  color: #0f0;
+}
+
+.archive.NoteControls--item:hover {
+  color: #f0f;
 }

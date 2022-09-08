@@ -3,15 +3,13 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
   padding: 10px 14px;
-  background: -webkit-linear-gradient(to right, #070055, #464653);
-  background: linear-gradient(to right, #070055, #464653);
   border-radius: 10px;
-  box-shadow: #399fa7 1px 1px 4px 1px;
+  background-color: var(--button-background-color);
 }
 
-.Category--container>* {
+.Category--container > * {
   height: 100%;
 }
 
@@ -31,9 +29,9 @@
   height: 100%;
   font: 1em sans-serif;
   font-weight: 700;
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
   color: rgb(224, 254, 255);
-  line-height: normal !important
+  line-height: normal !important;
 }
 
 .DeleteButton--container {
@@ -43,13 +41,13 @@
   border: none;
   height: 100%;
   text-align: center;
-  background-color: #399fa7;
-  padding: 3px;
+  background-color: #282828;
+  padding: 5px;
   border-radius: 5px;
-  color: #110d2e;
+  color: #fff;
 }
 
 .DeleteButton--container:hover {
-  background-color: #85f7ff;
-  color: #1d1752;
+  color: #f00;
+  cursor: pointer;
 }

@@ -7,13 +7,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: #000000;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #070050, #4b4b55);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #070050, #4b4b55);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  box-shadow: #9797b4 3px 3px 3px;
+  background: var(--button-background-color);
   padding: 14px 16px;
   gap: 12px;
   transition: all 0.05s ease-in-out;
@@ -21,6 +15,7 @@
 
 .Note--container:hover {
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 .Note--content {
@@ -30,11 +25,11 @@
   flex-direction: column;
 }
 
-.Note--content>h3 {
+.Note--content > h3 {
   font-size: 1.2rem;
   font-weight: 900;
 }
 
-.Note--date>p {
+.Note--date > p {
   font-weight: 700;
 }
