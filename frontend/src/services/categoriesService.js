@@ -1,11 +1,12 @@
-const API_URL = process.env.API_URL || 'https://lucas-notes-app.herokuapp.com/api';
+const API_URL =
+  process.env.API_URL || 'https://notesapp-react-node.4.us-1.fl0.io/api'
 
 export async function getAllCategoriesOnNote(id) {
   return await fetch(`${API_URL}/notes/${id}/categories`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-    }
+    },
   })
     .then(response => response.json())
     .catch(console.error)
@@ -16,7 +17,7 @@ export async function getAllCategories() {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-    }
+    },
   })
     .then(response => response.json())
     .catch(console.error)
@@ -27,7 +28,7 @@ export async function getNotesOfCategory(categoryName) {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-    }
+    },
   })
     .then(response => response.json())
     .catch(console.error)
