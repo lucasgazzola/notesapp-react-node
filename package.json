@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node index.ts",
     "dev": "nodemon index.ts",
-    "build": "mkdir -p prisma/migrations/0_init && npx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema.prisma --script > prisma/migrations/0_init/migration.sql && npx prisma migrate deploy --reattempt-failed && cd frontend && npm install && npm run build"
+    "build": "mkdir -p prisma/migrations/0_init && npx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema.prisma --script > prisma/migrations/0_init/migration.sql && npx prisma migrate deploy --schema=./schema.prisma && cd frontend && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
