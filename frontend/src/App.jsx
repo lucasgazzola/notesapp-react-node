@@ -1,12 +1,12 @@
-import React, { Suspense } from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import React, { Suspense } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-import { AppContextProvider } from './context/AppContext'
-import { NotesContextProvider } from './context/NotesContext'
+import { AppContextProvider } from './context/AppContext';
+import { NotesContextProvider } from './context/NotesContext';
 
-import './App.css'
+import './App.css';
 
-const Home = React.lazy(() => import('./pages/Home'))
+const Home = React.lazy(() => import('./pages/Home'));
 
 export default function App() {
   return (
@@ -19,5 +19,5 @@ export default function App() {
         </BrowserRouter>
       </NotesContextProvider>
     </AppContextProvider>
-  )
+  );
 }
