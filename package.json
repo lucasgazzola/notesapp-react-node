@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node index.ts",
     "dev": "nodemon index.ts",
-    "build": "cd frontend && npm install && npm run build"
+    "build": "npx prisma db push && npx prisma generate && npx prisma migrate deploy && cd frontend && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
