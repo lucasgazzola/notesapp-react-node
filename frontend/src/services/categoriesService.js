@@ -1,5 +1,6 @@
 const API_URL =
-  process.env.API_URL || 'https://notesapp-react-node.4.us-1.fl0.io/api'
+  import.meta.env.VITE_API_URL ||
+  'https://notesapp-react-node.4.us-1.fl0.io/api';
 
 export async function getAllCategoriesOnNote(id) {
   return await fetch(`${API_URL}/notes/${id}/categories`, {
@@ -8,8 +9,8 @@ export async function getAllCategoriesOnNote(id) {
       'Content-Type': 'application/json',
     },
   })
-    .then(response => response.json())
-    .catch(console.error)
+    .then((response) => response.json())
+    .catch(console.error);
 }
 
 export async function getAllCategories() {
@@ -19,8 +20,8 @@ export async function getAllCategories() {
       'Content-Type': 'application/json',
     },
   })
-    .then(response => response.json())
-    .catch(console.error)
+    .then((response) => response.json())
+    .catch(console.error);
 }
 
 export async function getNotesOfCategory(categoryName) {
@@ -30,6 +31,6 @@ export async function getNotesOfCategory(categoryName) {
       'Content-Type': 'application/json',
     },
   })
-    .then(response => response.json())
-    .catch(console.error)
+    .then((response) => response.json())
+    .catch(console.error);
 }

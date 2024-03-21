@@ -1,7 +1,8 @@
 const API_URL =
-  process.env.API_URL || 'https://notesapp-react-node.4.us-1.fl0.io/api'
-const NOTES_URL = `${API_URL}/notes`
-const ARCHIVED_NOTES_URL = `${API_URL}/archived`
+  import.meta.env.VITE_API_URL ||
+  'https://notesapp-react-node.4.us-1.fl0.io/api';
+const NOTES_URL = `${API_URL}/notes`;
+const ARCHIVED_NOTES_URL = `${API_URL}/archived`;
 
 export async function setNewNote({ title, content, categories }) {
   const headers = {
@@ -14,22 +15,22 @@ export async function setNewNote({ title, content, categories }) {
       content,
       categories,
     }),
-  }
+  };
   await fetch(NOTES_URL, headers)
-    .then(response => response.json())
-    .catch(console.error)
+    .then((response) => response.json())
+    .catch(console.error);
 }
 
 export async function getAllNotes() {
   return await fetch(NOTES_URL)
-    .then(response => response.json())
-    .catch(console.error)
+    .then((response) => response.json())
+    .catch(console.error);
 }
 
 export async function getAllArchivedNotes() {
   return await fetch(ARCHIVED_NOTES_URL)
-    .then(response => response.json())
-    .catch(console.error)
+    .then((response) => response.json())
+    .catch(console.error);
 }
 
 export async function updateNote({
@@ -53,10 +54,10 @@ export async function updateNote({
       categories,
       content,
     }),
-  }
+  };
   await fetch(NOTES_URL, headers)
-    .then(response => response.json())
-    .catch(console.error)
+    .then((response) => response.json())
+    .catch(console.error);
 }
 
 export async function deleteNote(id) {
@@ -68,8 +69,8 @@ export async function deleteNote(id) {
     body: JSON.stringify({
       id,
     }),
-  }
+  };
   await fetch(NOTES_URL, headers)
-    .then(res => res.json())
-    .catch(console.error)
+    .then((res) => res.json())
+    .catch(console.error);
 }
