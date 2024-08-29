@@ -69,7 +69,7 @@ export default function NotesList() {
         ) : (
           <h3 className="NotesList--loading">
             {
-              "There aren't any notes in this category. <br /> You can create one            by clicking the"
+              "There aren't any notes in this category. You can create one            by clicking the"
             }{' '}
             <span className="NotesList--loading--button" onClick={handleClick}>
               Create Note
